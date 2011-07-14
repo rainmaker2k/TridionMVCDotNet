@@ -2,18 +2,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B08255AC-8A9E-4884-860E-98BA7852DA0E}"
-	ProjectSection(SolutionItems) = preProject
-		Local.testsettings = Local.testsettings
-		RaboWeb.vsmdi = RaboWeb.vsmdi
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-		xsapilib.dll = xsapilib.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{767ED8B8-1C12-4B19-878D-914160313280}"
-	ProjectSection(SolutionItems) = preProject
-		Config\secapi.cfg = Config\secapi.cfg
-		Config\secapi_stub.cfg = Config\secapi_stub.cfg
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Extensions.DynamicDelivery.ContentModel.Contracts", "Tridion.Extensions.DynamicDelivery.ContentModel.Contracts\Tridion.Extensions.DynamicDelivery.ContentModel.Contracts.csproj", "{6F624D68-173F-4D5E-A70F-073663009100}"
 EndProject
@@ -35,174 +23,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tridion Dependencies", "Tri
 		Tridion Dependencies\xmogrt.dll = Tridion Dependencies\xmogrt.dll
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tridion Utilities", "Tridion Utilities", "{3AB400B2-550E-471A-B1BF-49A339D86F30}"
-	ProjectSection(SolutionItems) = preProject
-		Tridion Utilities\config.xml = Tridion Utilities\config.xml
-		Tridion Utilities\TcmUploadAssembly.exe = Tridion Utilities\TcmUploadAssembly.exe
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Extensions.DynamicDelivery.Mvc", "Tridion.Extensions.DynamicDelivery.Mvc\Tridion.Extensions.DynamicDelivery.Mvc.csproj", "{3AC37BE3-9832-4317-A5E2-2C24C61DECBD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Packages", "Packages", "{1278364C-0FFD-42FE-AF05-CECAD56D6D48}"
-	ProjectSection(SolutionItems) = preProject
-		packages\repositories.config = packages\repositories.config
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Extensions.DynamicDelivery.Factories", "Tridion.Extensions.DynamicDelivery.Factories\Tridion.Extensions.DynamicDelivery.Factories.csproj", "{1006F041-AF57-4D53-A98F-C0DB73362251}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elmah.1.1", "Elmah.1.1", "{0F49A373-D714-49C8-BE0C-0E8F158B1CE5}"
-	ProjectSection(SolutionItems) = preProject
-		packages\Elmah.1.1\elmah.1.1.nupkg = packages\Elmah.1.1\elmah.1.1.nupkg
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Glimpse.0.79", "Glimpse.0.79", "{9E67B19B-E4AF-4657-8EDB-4EBEC5F2D658}"
-	ProjectSection(SolutionItems) = preProject
-		packages\Glimpse.0.79\Glimpse.0.79.nupkg = packages\Glimpse.0.79\Glimpse.0.79.nupkg
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MefContrib.1.0.0.4", "MefContrib.1.0.0.4", "{EE42FC86-30E0-47C6-B7D8-0584B99BB1CE}"
-	ProjectSection(SolutionItems) = preProject
-		packages\MefContrib.1.0.0.4\MefContrib.1.0.0.4.nupkg = packages\MefContrib.1.0.0.4\MefContrib.1.0.0.4.nupkg
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modernizr.1.7", "Modernizr.1.7", "{6CA7F037-8B2E-4CD4-89F7-DCB5156B9A04}"
-	ProjectSection(SolutionItems) = preProject
-		packages\Modernizr.1.7\Modernizr.1.7.nupkg = packages\Modernizr.1.7\Modernizr.1.7.nupkg
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{34F37BD6-1712-4C83-8D49-8B1EF14E3BF1}"
-	ProjectSection(SolutionItems) = preProject
-		packages\Elmah.1.1\content\web.config.transform = packages\Elmah.1.1\content\web.config.transform
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{FE66A37B-C268-40ED-AF20-F10B4808C0BE}"
-	ProjectSection(SolutionItems) = preProject
-		packages\Elmah.1.1\lib\Elmah.dll = packages\Elmah.1.1\lib\Elmah.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{74888134-ACB3-4B64-B735-8FC946E6E60D}"
-	ProjectSection(SolutionItems) = preProject
-		packages\Glimpse.0.79\content\web.config.transform = packages\Glimpse.0.79\content\web.config.transform
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{3C33F17C-7711-45F2-A53D-A8D93DFAF648}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Readme", "App_Readme", "{7551BEAA-C408-41A6-A282-AE1273CF3438}"
-	ProjectSection(SolutionItems) = preProject
-		packages\Glimpse.0.79\content\App_Readme\glimpse.readme.txt = packages\Glimpse.0.79\content\App_Readme\glimpse.readme.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net40", "net40", "{187B7234-BBEC-4BC0-A1AC-1B2DE41A7E2B}"
-	ProjectSection(SolutionItems) = preProject
-		packages\Glimpse.0.79\lib\net40\Glimpse.Net.dll = packages\Glimpse.0.79\lib\net40\Glimpse.Net.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{373A8EE5-CC14-461D-AF23-097324A07419}"
-	ProjectSection(SolutionItems) = preProject
-		packages\MefContrib.1.0.0.4\lib\MefContrib.dll = packages\MefContrib.1.0.0.4\lib\MefContrib.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{34A45894-33BF-4EAE-A600-481C811546D8}"
-	ProjectSection(SolutionItems) = preProject
-		packages\MefContrib.1.0.0.4\Tools\install.ps1 = packages\MefContrib.1.0.0.4\Tools\install.ps1
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MefContrib.MVC3.1.0.0.4", "MefContrib.MVC3.1.0.0.4", "{DB282714-B6D5-4E72-A9BB-B6E99AC08B91}"
-	ProjectSection(SolutionItems) = preProject
-		packages\MefContrib.MVC3.1.0.0.4\MefContrib.MVC3.1.0.0.4.nupkg = packages\MefContrib.MVC3.1.0.0.4\MefContrib.MVC3.1.0.0.4.nupkg
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{A9FAE10D-B6C8-4EDC-A961-71554484A159}"
-	ProjectSection(SolutionItems) = preProject
-		packages\MefContrib.MVC3.1.0.0.4\lib\MefContrib.Web.Mvc.dll = packages\MefContrib.MVC3.1.0.0.4\lib\MefContrib.Web.Mvc.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{5D919A1E-449E-4585-84D5-E043D1F2ABCC}"
-	ProjectSection(SolutionItems) = preProject
-		packages\MefContrib.MVC3.1.0.0.4\Tools\install.ps1 = packages\MefContrib.MVC3.1.0.0.4\Tools\install.ps1
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{BE26B15B-6919-4557-AB88-466603928158}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Start", "App_Start", "{07226456-88E3-4D50-A90E-3AE9141E934F}"
-	ProjectSection(SolutionItems) = preProject
-		packages\MefContrib.MVC3.1.0.0.4\Content\App_Start\AppStart_MefContribMVC3.cs.pp = packages\MefContrib.MVC3.1.0.0.4\Content\App_Start\AppStart_MefContribMVC3.cs.pp
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{6A690AAC-F1CA-4C3A-9360-8529BB6150DA}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{65813D99-FFA5-4920-A25E-C6DD7E02BFA2}"
-	ProjectSection(SolutionItems) = preProject
-		packages\Modernizr.1.7\Content\Scripts\Modernizr-1.7.js = packages\Modernizr.1.7\Content\Scripts\Modernizr-1.7.js
-		packages\Modernizr.1.7\Content\Scripts\Modernizr-1.7.min.js = packages\Modernizr.1.7\Content\Scripts\Modernizr-1.7.min.js
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebActivator.1.4.1", "WebActivator.1.4.1", "{C7E8E774-94AF-40C7-A9FC-3763B6D33627}"
-	ProjectSection(SolutionItems) = preProject
-		packages\WebActivator.1.4.1\WebActivator.1.4.1.nupkg = packages\WebActivator.1.4.1\WebActivator.1.4.1.nupkg
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{0AA850A9-24F0-46FA-97CF-12A593F8CE72}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net40", "net40", "{A4CA8FA8-B55A-4749-B2F4-D34C51B87EC4}"
-	ProjectSection(SolutionItems) = preProject
-		packages\WebActivator.1.4.1\lib\net40\WebActivator.dll = packages\WebActivator.1.4.1\lib\net40\WebActivator.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "log4net.1.2.10", "log4net.1.2.10", "{7EDDD038-825F-4FFF-BA37-6C4BB8C774C9}"
-	ProjectSection(SolutionItems) = preProject
-		packages\log4net.1.2.10\log4net.1.2.10.nupkg = packages\log4net.1.2.10\log4net.1.2.10.nupkg
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{D3C8E2D9-1982-4A11-BDC9-0A5172A116AB}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.0", "2.0", "{49464B56-6442-4473-AEE7-E907C8D4C567}"
-	ProjectSection(SolutionItems) = preProject
-		packages\log4net.1.2.10\lib\2.0\log4net.dll = packages\log4net.1.2.10\lib\2.0\log4net.dll
-		packages\log4net.1.2.10\lib\2.0\log4net.xml = packages\log4net.1.2.10\lib\2.0\log4net.xml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.0", "1.0", "{56DAE512-92CB-48CD-A63B-60AE9B027A78}"
-	ProjectSection(SolutionItems) = preProject
-		packages\log4net.1.2.10\lib\1.0\log4net.dll = packages\log4net.1.2.10\lib\1.0\log4net.dll
-		packages\log4net.1.2.10\lib\1.0\log4net.xml = packages\log4net.1.2.10\lib\1.0\log4net.xml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1", "1.1", "{AC6942BE-2125-4970-9AC7-D208ADAE431D}"
-	ProjectSection(SolutionItems) = preProject
-		packages\log4net.1.2.10\lib\1.1\log4net.dll = packages\log4net.1.2.10\lib\1.1\log4net.dll
-		packages\log4net.1.2.10\lib\1.1\log4net.xml = packages\log4net.1.2.10\lib\1.1\log4net.xml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sqlite.1.0.66.0", "Sqlite.1.0.66.0", "{9164BFE9-DB5D-4AF3-ACC3-B8AA5A2928D9}"
-	ProjectSection(SolutionItems) = preProject
-		packages\Sqlite.1.0.66.0\System.Data.SQLite.dll = packages\Sqlite.1.0.66.0\System.Data.SQLite.dll
-		packages\Sqlite.1.0.66.0\System.Data.SQLite.Linq.dll = packages\Sqlite.1.0.66.0\System.Data.SQLite.Linq.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Miscellaneous Utilities", "Miscellaneous Utilities", "{97F7437F-DE2C-4276-93B7-CBFA9F2ED4CB}"
-	ProjectSection(SolutionItems) = preProject
-		Miscellaneous Utilities\SQLite-1.0.66.0-setup.exe = Miscellaneous Utilities\SQLite-1.0.66.0-setup.exe
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MiniProfiler.1.4", "MiniProfiler.1.4", "{ECED50B5-C9EF-4C6C-91DF-7A3BA2AB26C6}"
-	ProjectSection(SolutionItems) = preProject
-		packages\MiniProfiler.1.4\MiniProfiler.1.4.nupkg = packages\MiniProfiler.1.4\MiniProfiler.1.4.nupkg
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{86C3C937-75AC-435D-A9DE-451E63D8D8AC}"
-	ProjectSection(SolutionItems) = preProject
-		packages\MiniProfiler.1.4\lib\MvcMiniProfiler.dll = packages\MiniProfiler.1.4\lib\MvcMiniProfiler.dll
-		packages\MiniProfiler.1.4\lib\MvcMiniProfiler.pdb = packages\MiniProfiler.1.4\lib\MvcMiniProfiler.pdb
-		packages\MiniProfiler.1.4\lib\MvcMiniProfiler.xml = packages\MiniProfiler.1.4\lib\MvcMiniProfiler.xml
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Extensions.DynamicDelivery.Factories.Base", "Tridion.Extensions.DynamicDelivery.Factories.Base\Tridion.Extensions.DynamicDelivery.Factories.Base.csproj", "{9E96EFE0-7478-4551-A47A-1F04B9F01DF7}"
 EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = RaboWeb.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		DeveloperDebug|Any CPU = DeveloperDebug|Any CPU
@@ -257,40 +84,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{767ED8B8-1C12-4B19-878D-914160313280} = {B08255AC-8A9E-4884-860E-98BA7852DA0E}
 		{DBE6DE36-ED63-4E08-A67B-9F7037EC72AE} = {B08255AC-8A9E-4884-860E-98BA7852DA0E}
-		{3AB400B2-550E-471A-B1BF-49A339D86F30} = {B08255AC-8A9E-4884-860E-98BA7852DA0E}
-		{1278364C-0FFD-42FE-AF05-CECAD56D6D48} = {B08255AC-8A9E-4884-860E-98BA7852DA0E}
-		{97F7437F-DE2C-4276-93B7-CBFA9F2ED4CB} = {B08255AC-8A9E-4884-860E-98BA7852DA0E}
-		{0F49A373-D714-49C8-BE0C-0E8F158B1CE5} = {1278364C-0FFD-42FE-AF05-CECAD56D6D48}
-		{9E67B19B-E4AF-4657-8EDB-4EBEC5F2D658} = {1278364C-0FFD-42FE-AF05-CECAD56D6D48}
-		{EE42FC86-30E0-47C6-B7D8-0584B99BB1CE} = {1278364C-0FFD-42FE-AF05-CECAD56D6D48}
-		{6CA7F037-8B2E-4CD4-89F7-DCB5156B9A04} = {1278364C-0FFD-42FE-AF05-CECAD56D6D48}
-		{DB282714-B6D5-4E72-A9BB-B6E99AC08B91} = {1278364C-0FFD-42FE-AF05-CECAD56D6D48}
-		{C7E8E774-94AF-40C7-A9FC-3763B6D33627} = {1278364C-0FFD-42FE-AF05-CECAD56D6D48}
-		{7EDDD038-825F-4FFF-BA37-6C4BB8C774C9} = {1278364C-0FFD-42FE-AF05-CECAD56D6D48}
-		{9164BFE9-DB5D-4AF3-ACC3-B8AA5A2928D9} = {1278364C-0FFD-42FE-AF05-CECAD56D6D48}
-		{ECED50B5-C9EF-4C6C-91DF-7A3BA2AB26C6} = {1278364C-0FFD-42FE-AF05-CECAD56D6D48}
-		{34F37BD6-1712-4C83-8D49-8B1EF14E3BF1} = {0F49A373-D714-49C8-BE0C-0E8F158B1CE5}
-		{FE66A37B-C268-40ED-AF20-F10B4808C0BE} = {0F49A373-D714-49C8-BE0C-0E8F158B1CE5}
-		{74888134-ACB3-4B64-B735-8FC946E6E60D} = {9E67B19B-E4AF-4657-8EDB-4EBEC5F2D658}
-		{3C33F17C-7711-45F2-A53D-A8D93DFAF648} = {9E67B19B-E4AF-4657-8EDB-4EBEC5F2D658}
-		{373A8EE5-CC14-461D-AF23-097324A07419} = {EE42FC86-30E0-47C6-B7D8-0584B99BB1CE}
-		{34A45894-33BF-4EAE-A600-481C811546D8} = {EE42FC86-30E0-47C6-B7D8-0584B99BB1CE}
-		{6A690AAC-F1CA-4C3A-9360-8529BB6150DA} = {6CA7F037-8B2E-4CD4-89F7-DCB5156B9A04}
-		{7551BEAA-C408-41A6-A282-AE1273CF3438} = {74888134-ACB3-4B64-B735-8FC946E6E60D}
-		{187B7234-BBEC-4BC0-A1AC-1B2DE41A7E2B} = {3C33F17C-7711-45F2-A53D-A8D93DFAF648}
-		{A9FAE10D-B6C8-4EDC-A961-71554484A159} = {DB282714-B6D5-4E72-A9BB-B6E99AC08B91}
-		{5D919A1E-449E-4585-84D5-E043D1F2ABCC} = {DB282714-B6D5-4E72-A9BB-B6E99AC08B91}
-		{BE26B15B-6919-4557-AB88-466603928158} = {DB282714-B6D5-4E72-A9BB-B6E99AC08B91}
-		{07226456-88E3-4D50-A90E-3AE9141E934F} = {BE26B15B-6919-4557-AB88-466603928158}
-		{65813D99-FFA5-4920-A25E-C6DD7E02BFA2} = {6A690AAC-F1CA-4C3A-9360-8529BB6150DA}
-		{0AA850A9-24F0-46FA-97CF-12A593F8CE72} = {C7E8E774-94AF-40C7-A9FC-3763B6D33627}
-		{A4CA8FA8-B55A-4749-B2F4-D34C51B87EC4} = {0AA850A9-24F0-46FA-97CF-12A593F8CE72}
-		{D3C8E2D9-1982-4A11-BDC9-0A5172A116AB} = {7EDDD038-825F-4FFF-BA37-6C4BB8C774C9}
-		{49464B56-6442-4473-AEE7-E907C8D4C567} = {D3C8E2D9-1982-4A11-BDC9-0A5172A116AB}
-		{56DAE512-92CB-48CD-A63B-60AE9B027A78} = {D3C8E2D9-1982-4A11-BDC9-0A5172A116AB}
-		{AC6942BE-2125-4970-9AC7-D208ADAE431D} = {D3C8E2D9-1982-4A11-BDC9-0A5172A116AB}
-		{86C3C937-75AC-435D-A9DE-451E63D8D8AC} = {ECED50B5-C9EF-4C6C-91DF-7A3BA2AB26C6}
 	EndGlobalSection
 EndGlobal
