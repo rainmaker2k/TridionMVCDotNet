@@ -25,8 +25,14 @@ namespace SampleWebsite
                 "TridionPage",
                 "{*PageId}",
                 new { controller = "Manage", action = "Page" }, // Parameter defaults
-                new { pageId = @"^.*\.(asp|aspx|htm|html)$" } // Parameter constraints
+                new { pageId = @"^(.*)?$" } // Parameter constraints
             );
+
+            //routes.MapRoute(
+            //    "Default", // Route name
+            //    "", // URL with parameters
+            //    new { controller = "Manage", action = "Page"} // Parameter defaults
+            //);
 
 
             //routes.MapRoute(

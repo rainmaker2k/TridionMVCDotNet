@@ -20,7 +20,5 @@ namespace SampleWebsite.Controllers
                 ContentEncoding = Encoding.UTF8
             };
         }
-
-
     }
 }
