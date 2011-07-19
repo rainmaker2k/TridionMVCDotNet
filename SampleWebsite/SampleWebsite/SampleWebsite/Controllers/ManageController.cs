@@ -4,21 +4,35 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Text;
+using Tridion.Extensions.DynamicDelivery.Mvc.Controllers;
+using System.Security;
+using Tridion.Extensions.DynamicDelivery.Mvc.Html;
+using System.ComponentModel.Composition;
 
 namespace SampleWebsite.Controllers
 {
-    public class ManageController : Controller
+    public class ManageController : TridionControllerBase
     {
-
-        [HandleError]
-        public virtual ActionResult Page(string pageId)
+        [ImportingConstructor]
+        public ManageController(IComponentPresentationRenderer renderer)
+            : base(renderer)
         {
-            return new ContentResult
+        }
+
+#if (!DEBUG)
+        [OutputCache(CacheProfile = "ControllerCache")]
+#endif
+        [HandleError, Authorize]
+        public override System.Web.Mvc.ActionResult Page(string pageId)
+        {
+            try
             {
-                Content = String.Format("Thanks for coming to this page. I am {0}", pageId),
-                ContentType = "text/html",
-                ContentEncoding = Encoding.UTF8
-            };
+                return base.Page(pageId);
+            }
+            catch (SecurityException se)
+            {
+                throw new HttpException(403, se.Message);
+            }
         }
     }
 }

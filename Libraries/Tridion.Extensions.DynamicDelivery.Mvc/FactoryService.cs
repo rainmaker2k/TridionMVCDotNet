@@ -41,14 +41,6 @@ namespace Tridion.Extensions.DynamicDelivery.Mvc
             }
         }
 
-        public static IQueryFactory QueryFactory
-        {
-            get
-            {
-                return ServiceLocator.GetInstance<IQueryFactory>();
-            }
-        }
-
         public static IModelFactory ModelFactory
         {
             get

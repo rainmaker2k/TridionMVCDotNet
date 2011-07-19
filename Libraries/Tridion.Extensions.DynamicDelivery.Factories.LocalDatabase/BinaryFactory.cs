@@ -16,7 +16,7 @@ namespace Tridion.Extensions.DynamicDelivery.Factories.LocalDatabase
             throw new NotImplementedException();
         }
 
-        public ContentModel.IBinary FindBinary(string url)
+        public IBinary FindBinary(string url)
         {
             throw new NotImplementedException();
         }
