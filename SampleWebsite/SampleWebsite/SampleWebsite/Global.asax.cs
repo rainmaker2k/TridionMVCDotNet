@@ -27,20 +27,6 @@ namespace SampleWebsite
                 new { controller = "Manage", action = "Page" }, // Parameter defaults
                 new { pageId = @"^(.*)?$" } // Parameter constraints
             );
-
-            //routes.MapRoute(
-            //    "Default", // Route name
-            //    "", // URL with parameters
-            //    new { controller = "Manage", action = "Page"} // Parameter defaults
-            //);
-
-
-            //routes.MapRoute(
-            //    "Default", // Route name
-            //    "{controller}/{action}/{id}", // URL with parameters
-            //    new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-            //);
-
         }
 
         protected void Application_Start()

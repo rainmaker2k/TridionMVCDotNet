@@ -3,16 +3,74 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebsite", "SampleWebsite\SampleWebsite.csproj", "{C8D0618D-D6DE-46FE-8563-6421B77239DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Extensions.DynamicDelivery.ContentModel", "..\..\Libraries\Tridion.Extensions.DynamicDelivery.ContentModel\Tridion.Extensions.DynamicDelivery.ContentModel.csproj", "{FDA7B072-C0B1-46E6-A3DB-B68CA1BCDBBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Extensions.DynamicDelivery.ContentModel.Contracts", "..\..\Libraries\Tridion.Extensions.DynamicDelivery.ContentModel.Contracts\Tridion.Extensions.DynamicDelivery.ContentModel.Contracts.csproj", "{6F624D68-173F-4D5E-A70F-073663009100}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Extensions.DynamicDelivery.Factories", "..\..\Libraries\Tridion.Extensions.DynamicDelivery.Factories\Tridion.Extensions.DynamicDelivery.Factories.csproj", "{1006F041-AF57-4D53-A98F-C0DB73362251}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Extensions.DynamicDelivery.Factories.Base", "..\..\Libraries\Tridion.Extensions.DynamicDelivery.Factories.Base\Tridion.Extensions.DynamicDelivery.Factories.Base.csproj", "{9E96EFE0-7478-4551-A47A-1F04B9F01DF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Extensions.DynamicDelivery.Mvc", "..\..\Libraries\Tridion.Extensions.DynamicDelivery.Mvc\Tridion.Extensions.DynamicDelivery.Mvc.csproj", "{3AC37BE3-9832-4317-A5E2-2C24C61DECBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Extensions.DynamicDelivery.Templates", "..\..\Libraries\Tridion.Extensions.DynamicDelivery.Templates\Tridion.Extensions.DynamicDelivery.Templates.csproj", "{A6C14491-3C90-4BA4-BAA4-AFC7911FD874}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Extensions.DynamicDelivery.Factories.LocalDatabase", "..\..\Libraries\Tridion.Extensions.DynamicDelivery.Factories.LocalDatabase\Tridion.Extensions.DynamicDelivery.Factories.LocalDatabase.csproj", "{0227A3C2-4F9E-4459-A5B8-2E2803F552AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		TridionDebug|Any CPU = TridionDebug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C8D0618D-D6DE-46FE-8563-6421B77239DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C8D0618D-D6DE-46FE-8563-6421B77239DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8D0618D-D6DE-46FE-8563-6421B77239DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8D0618D-D6DE-46FE-8563-6421B77239DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8D0618D-D6DE-46FE-8563-6421B77239DC}.TridionDebug|Any CPU.ActiveCfg = TridionDebug|Any CPU
+		{C8D0618D-D6DE-46FE-8563-6421B77239DC}.TridionDebug|Any CPU.Build.0 = TridionDebug|Any CPU
+		{FDA7B072-C0B1-46E6-A3DB-B68CA1BCDBBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDA7B072-C0B1-46E6-A3DB-B68CA1BCDBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDA7B072-C0B1-46E6-A3DB-B68CA1BCDBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDA7B072-C0B1-46E6-A3DB-B68CA1BCDBBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDA7B072-C0B1-46E6-A3DB-B68CA1BCDBBD}.TridionDebug|Any CPU.ActiveCfg = TridionDebug|Any CPU
+		{FDA7B072-C0B1-46E6-A3DB-B68CA1BCDBBD}.TridionDebug|Any CPU.Build.0 = TridionDebug|Any CPU
+		{6F624D68-173F-4D5E-A70F-073663009100}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F624D68-173F-4D5E-A70F-073663009100}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F624D68-173F-4D5E-A70F-073663009100}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F624D68-173F-4D5E-A70F-073663009100}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F624D68-173F-4D5E-A70F-073663009100}.TridionDebug|Any CPU.ActiveCfg = TridionDebug|Any CPU
+		{6F624D68-173F-4D5E-A70F-073663009100}.TridionDebug|Any CPU.Build.0 = TridionDebug|Any CPU
+		{1006F041-AF57-4D53-A98F-C0DB73362251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1006F041-AF57-4D53-A98F-C0DB73362251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1006F041-AF57-4D53-A98F-C0DB73362251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1006F041-AF57-4D53-A98F-C0DB73362251}.TridionDebug|Any CPU.ActiveCfg = TridionDebug|Any CPU
+		{1006F041-AF57-4D53-A98F-C0DB73362251}.TridionDebug|Any CPU.Build.0 = TridionDebug|Any CPU
+		{9E96EFE0-7478-4551-A47A-1F04B9F01DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E96EFE0-7478-4551-A47A-1F04B9F01DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E96EFE0-7478-4551-A47A-1F04B9F01DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E96EFE0-7478-4551-A47A-1F04B9F01DF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E96EFE0-7478-4551-A47A-1F04B9F01DF7}.TridionDebug|Any CPU.ActiveCfg = TridionDebug|Any CPU
+		{9E96EFE0-7478-4551-A47A-1F04B9F01DF7}.TridionDebug|Any CPU.Build.0 = TridionDebug|Any CPU
+		{3AC37BE3-9832-4317-A5E2-2C24C61DECBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AC37BE3-9832-4317-A5E2-2C24C61DECBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AC37BE3-9832-4317-A5E2-2C24C61DECBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AC37BE3-9832-4317-A5E2-2C24C61DECBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AC37BE3-9832-4317-A5E2-2C24C61DECBD}.TridionDebug|Any CPU.ActiveCfg = TridionDebug|Any CPU
+		{3AC37BE3-9832-4317-A5E2-2C24C61DECBD}.TridionDebug|Any CPU.Build.0 = TridionDebug|Any CPU
+		{A6C14491-3C90-4BA4-BAA4-AFC7911FD874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6C14491-3C90-4BA4-BAA4-AFC7911FD874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6C14491-3C90-4BA4-BAA4-AFC7911FD874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6C14491-3C90-4BA4-BAA4-AFC7911FD874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6C14491-3C90-4BA4-BAA4-AFC7911FD874}.TridionDebug|Any CPU.ActiveCfg = TridionDebug|Any CPU
+		{A6C14491-3C90-4BA4-BAA4-AFC7911FD874}.TridionDebug|Any CPU.Build.0 = TridionDebug|Any CPU
+		{0227A3C2-4F9E-4459-A5B8-2E2803F552AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0227A3C2-4F9E-4459-A5B8-2E2803F552AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0227A3C2-4F9E-4459-A5B8-2E2803F552AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0227A3C2-4F9E-4459-A5B8-2E2803F552AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0227A3C2-4F9E-4459-A5B8-2E2803F552AB}.TridionDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0227A3C2-4F9E-4459-A5B8-2E2803F552AB}.TridionDebug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
