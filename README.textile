@@ -10,6 +10,6 @@ which currently only runs on Java platforms.
 
 h3. Contributors
 * "Kah Tang":http://github.com/rainmaker2k
-* "Albert Romkes"
+* "Albert Romkes":https://github.com/albertromkes
 * "Ruud Seen"
 * "Alfred Creemers" 
