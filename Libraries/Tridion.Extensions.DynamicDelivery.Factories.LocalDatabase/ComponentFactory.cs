@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Tridion.Extensions.DynamicDelivery.ContentModel.Factories;
+using System.ComponentModel.Composition;
 
 namespace Tridion.Extensions.DynamicDelivery.Factories.LocalDatabase
 {
+    [Export(typeof(IComponentFactory))]
     public class ComponentFactory : IComponentFactory
     {
         #region IComponentFactory Members

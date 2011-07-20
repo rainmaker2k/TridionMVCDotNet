@@ -54,6 +54,12 @@
       <Private>True</Private>
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="MefContrib">
+      <HintPath>..\..\..\Libraries\packages\MefContrib.1.0.0.4\lib\MefContrib.dll</HintPath>
+    </Reference>
+    <Reference Include="MefContrib.Web.Mvc">
+      <HintPath>..\..\..\Libraries\packages\MefContrib.MVC3.1.0.0.4\lib\MefContrib.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data.Entity" />
@@ -78,8 +84,12 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivator">
+      <HintPath>..\..\..\Libraries\packages\WebActivator.1.4.1\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppStart_MefContribMVC3.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />

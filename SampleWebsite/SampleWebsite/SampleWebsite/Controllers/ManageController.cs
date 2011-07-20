@@ -22,7 +22,7 @@ namespace SampleWebsite.Controllers
 #if (!DEBUG)
         [OutputCache(CacheProfile = "ControllerCache")]
 #endif
-        [HandleError, Authorize]
+        [HandleError]
         public override System.Web.Mvc.ActionResult Page(string pageId)
         {
             try

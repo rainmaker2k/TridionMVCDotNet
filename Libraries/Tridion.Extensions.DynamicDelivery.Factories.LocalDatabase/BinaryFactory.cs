@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using Tridion.Extensions.DynamicDelivery.ContentModel.Factories;
 using Tridion.Extensions.DynamicDelivery.ContentModel;
+using System.ComponentModel.Composition;
 
 namespace Tridion.Extensions.DynamicDelivery.Factories.LocalDatabase
 {
+    [Export(typeof(IBinaryFactory))]
     public class BinaryFactory : IBinaryFactory
     {
         #region IBinaryFactory Members
