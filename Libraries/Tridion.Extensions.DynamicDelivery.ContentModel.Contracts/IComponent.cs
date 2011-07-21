@@ -12,5 +12,6 @@
         IMultimedia Multimedia { get; }
         ISchema Schema { get; }
         //string ResolvedUrl { get; set; }
+        int Version { get; }
     }
 }

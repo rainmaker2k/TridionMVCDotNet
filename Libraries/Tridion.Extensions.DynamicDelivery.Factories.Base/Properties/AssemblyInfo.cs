@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Rabobank ICT")]
 [assembly: AssemblyProduct("Tridion.Extensions.DynamicDelivery.Factories.Base")]
-[assembly: AssemblyCopyright("Copyright © Rabobank ICT 2011")]
+[assembly: AssemblyCopyright("Copyright © TridionMVCDotNet 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

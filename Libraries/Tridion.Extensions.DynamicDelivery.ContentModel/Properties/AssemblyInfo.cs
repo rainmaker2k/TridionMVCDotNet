@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SDL")]
 [assembly: AssemblyProduct("Tridion.Extensions.DynamicDelivery.ContentModel")]
-[assembly: AssemblyCopyright("Copyright © SDL 2011")]
+[assembly: AssemblyCopyright("Copyright © TridionMVCDotNet 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

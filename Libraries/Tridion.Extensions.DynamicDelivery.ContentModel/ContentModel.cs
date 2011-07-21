@@ -76,6 +76,8 @@ using Tridion.Extensions.DynamicDelivery.ContentModel.Factories;
         {
             get { return Categories.ToList<ICategory>(); }
         }
+
+        public int Version { get; set; }
     }
 
     public class Keyword : TridionItem, IKeyword
@@ -204,6 +206,8 @@ using Tridion.Extensions.DynamicDelivery.ContentModel.Factories;
         //}
 
         //public ILinkFactory LinkFactory { get; set; }
+
+        public int Version { get; set; }
         #endregion Properties
 
         #region constructors
