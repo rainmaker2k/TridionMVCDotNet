@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Extensions.DynamicD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Extensions.DynamicDelivery.Factories.Base", "Tridion.Extensions.DynamicDelivery.Factories.Base\Tridion.Extensions.DynamicDelivery.Factories.Base.csproj", "{9E96EFE0-7478-4551-A47A-1F04B9F01DF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Extensions.DynamicDelivery.Factories.WebService", "Tridion.Extensions.DynamicDelivery.Factories.WebService\Tridion.Extensions.DynamicDelivery.Factories.WebService.csproj", "{F3D9A389-D6C7-4E38-A403-F10943541DCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,14 @@ Global
 		{9E96EFE0-7478-4551-A47A-1F04B9F01DF7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9E96EFE0-7478-4551-A47A-1F04B9F01DF7}.TridionDebug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9E96EFE0-7478-4551-A47A-1F04B9F01DF7}.TridionDebug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D9A389-D6C7-4E38-A403-F10943541DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D9A389-D6C7-4E38-A403-F10943541DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D9A389-D6C7-4E38-A403-F10943541DCB}.DeveloperDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D9A389-D6C7-4E38-A403-F10943541DCB}.DeveloperDebug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D9A389-D6C7-4E38-A403-F10943541DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3D9A389-D6C7-4E38-A403-F10943541DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3D9A389-D6C7-4E38-A403-F10943541DCB}.TridionDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D9A389-D6C7-4E38-A403-F10943541DCB}.TridionDebug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

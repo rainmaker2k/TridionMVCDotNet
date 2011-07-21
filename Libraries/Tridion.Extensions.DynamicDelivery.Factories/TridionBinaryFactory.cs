@@ -29,6 +29,7 @@ namespace Tridion.Extensions.DynamicDelivery.Factories
                         {
                             binary = new Binary(this)
                             {
+                                Id = String.Format("tcm:{0}-{1}", binData.GetPublicationId(), binData.GetId()),
                                 Url = url,
                                 LastPublishedDate = DateTime.Now,
                                 Multimedia = null,

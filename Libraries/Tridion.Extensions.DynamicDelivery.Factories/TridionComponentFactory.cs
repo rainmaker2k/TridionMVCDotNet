@@ -158,6 +158,32 @@ namespace Tridion.Extensions.DynamicDelivery.Factories
             }
         }
 
+        /// <summary>
+        /// Gets the meta information for a given component
+        /// </summary>
+        /// <param name="componentUri"></param>
+        /// <returns>ComponentMeta object holding the meta information</returns>
+        public IComponentMeta GetComponentMeta(string componentUri)
+        {
+            ComponentMeta compMeta = new ComponentMeta();
+            using (Com.Tridion.Util.TCMURI uri = new Com.Tridion.Util.TCMURI(componentUri))
+            {
+                using (Com.Tridion.Meta.ComponentMetaFactory fac = new Com.Tridion.Meta.ComponentMetaFactory(PublicationId))
+                {
+                    Com.Tridion.Meta.ComponentMeta componentMeta = fac.GetMeta(uri.GetItemId());
+                    //Convert Java.Util.Date to System.Date //TODO: check if correct
+                    string creationDate = componentMeta.GetCreationDate().ToString();
+                    string modificationDate = componentMeta.GetModificationDate().ToString();
+
+                    compMeta.CreationDate = Convert.ToDateTime(creationDate, System.Globalization.CultureInfo.InvariantCulture);
+                    compMeta.ModificationDate = Convert.ToDateTime(modificationDate, System.Globalization.CultureInfo.InvariantCulture);
+
+                    return compMeta;
+                }
+            }
+
+        }
+
         public IComponent GetLastPublishedComponent(string schemaUri)
         {
             string[] componentContents = GetComponents(FindComponentUrisBySchemas(new[] { schemaUri }, 1, null)).ToArray();
