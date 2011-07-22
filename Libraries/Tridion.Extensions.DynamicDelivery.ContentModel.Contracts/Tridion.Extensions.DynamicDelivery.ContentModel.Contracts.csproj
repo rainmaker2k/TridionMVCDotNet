@@ -73,6 +73,7 @@
     <Compile Include="Exceptions\KeywordNotFoundException.cs" />
     <Compile Include="Exceptions\ModelNotCreatedException.cs" />
     <Compile Include="Exceptions\PageNotFoundException.cs" />
+    <Compile Include="ExtendedQueryParameters.cs" />
     <Compile Include="Factories\ITaxonomyFactory.cs" />
     <Compile Include="Factories\IModelFactory.cs" />
     <Compile Include="Factories\IBinaryFactory.cs" />
