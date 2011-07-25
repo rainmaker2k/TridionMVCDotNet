@@ -11,5 +11,6 @@
         IPageTemplate PageTemplate { get; }
         ISchema Schema { get; }
         IOrganizationalItem StructureGroup { get; }
+        int Version { get; }
     }
 }

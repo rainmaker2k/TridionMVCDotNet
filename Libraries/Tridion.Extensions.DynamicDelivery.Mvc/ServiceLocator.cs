@@ -15,7 +15,7 @@ namespace Tridion.Extensions.DynamicDelivery.Mvc
         public static void Initialize()
         {
             catalog = new AggregateCatalog(new DirectoryCatalog("bin"));
-            container = new CompositionContainer(catalog);
+            container = new CompositionContainer(catalog, true);
         }
 
         public static T GetInstance<T>()

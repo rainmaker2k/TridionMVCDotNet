@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Tridion.Extensions.DynamicDelivery.Factories.LocalDatabase")]
+[assembly: AssemblyTitle("Tridion.Extensions.DynamicDelivery.Factories.WebService")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Tridion.Extensions.DynamicDelivery.Factories.LocalDatabase")]
-[assembly: AssemblyCopyright("Copyright © TridionMVCDotNet 2011")]
+[assembly: AssemblyCompany("Rabobank ICT")]
+[assembly: AssemblyProduct("Tridion.Extensions.DynamicDelivery.Factories.WebService")]
+[assembly: AssemblyCopyright("Copyright © Rabobank ICT 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("adf80168-5a9c-48b0-9bcd-ac399cab738e")]
+[assembly: Guid("e64ec902-8364-4689-b09d-9bdc1163c911")]
 
 // Version information for an assembly consists of the following four values:
 //
