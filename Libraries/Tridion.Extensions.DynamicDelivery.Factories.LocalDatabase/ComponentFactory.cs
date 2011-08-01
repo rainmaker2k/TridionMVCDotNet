@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Tridion.Extensions.DynamicDelivery.ContentModel.Factories;
 using System.ComponentModel.Composition;
+using Tridion.Extensions.DynamicDelivery.ContentModel;
 
 namespace Tridion.Extensions.DynamicDelivery.Factories.LocalDatabase
 {
@@ -12,42 +13,42 @@ namespace Tridion.Extensions.DynamicDelivery.Factories.LocalDatabase
     {
         #region IComponentFactory Members
 
-        public bool TryGetComponent(string componentUri, out ContentModel.IComponent component)
+        public bool TryGetComponent(string componentUri, out IComponent component)
         {
             throw new NotImplementedException();
         }
 
-        public ContentModel.IComponent GetComponent(string componentUri)
+        public IComponent GetComponent(string componentUri)
         {
             throw new NotImplementedException();
         }
 
-        public IList<ContentModel.IComponent> FindComponents(string schemaUri)
+        public IList<IComponent> FindComponents(string schemaUri)
         {
             throw new NotImplementedException();
         }
 
-        public IList<ContentModel.IComponent> FindComponents(string[] schemaUris)
+        public IList<IComponent> FindComponents(string[] schemaUris)
         {
             throw new NotImplementedException();
         }
 
-        public IList<ContentModel.IComponent> FindComponents(string[] schemaUris, DateTime sinceLastPublished)
+        public IList<IComponent> FindComponents(string[] schemaUris, DateTime sinceLastPublished)
         {
             throw new NotImplementedException();
         }
 
-        public IDictionary<string, ContentModel.IComponentMeta> FindComponentMetas(string[] schemaUri)
+        public IDictionary<string, IComponentMeta> FindComponentMetas(string[] schemaUri)
         {
             throw new NotImplementedException();
         }
 
-        public IDictionary<string, ContentModel.IComponentMeta> FindComponentMetas(string[] schemaUri, DateTime sinceLastPublished)
+        public IDictionary<string, IComponentMeta> FindComponentMetas(string[] schemaUri, DateTime sinceLastPublished)
         {
             throw new NotImplementedException();
         }
 
-        public ContentModel.IComponent GetLastPublishedComponent(string schemaUri)
+        public IComponent GetLastPublishedComponent(string schemaUri)
         {
             throw new NotImplementedException();
         }
