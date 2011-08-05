@@ -46,6 +46,9 @@
     <Reference Include="Tridion.ContentDelivery">
       <HintPath>..\..\..\..\Tridion Install Files\Content Delivery\dotNet\x86_64\Tridion.ContentDelivery.dll</HintPath>
     </Reference>
+    <Reference Include="Tridion.ContentDelivery.AmbientData">
+      <HintPath>..\..\..\..\Tridion Install Files\Content Delivery\dotNet\x86\Tridion.ContentDelivery.AmbientData.dll</HintPath>
+    </Reference>
     <Reference Include="Tridion.ContentDelivery.Configuration">
       <HintPath>..\..\..\..\Tridion Install Files\Content Delivery\dotNet\x86_64\Tridion.ContentDelivery.Configuration.dll</HintPath>
     </Reference>
@@ -72,6 +75,12 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>del /Q /F $(SolutionDir)\SampleWebsite\bin\mef\*.Factories.*</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>Copy /Y $(TargetDir)*.dll $(SolutionDir)SampleWebsite\bin\mef\</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

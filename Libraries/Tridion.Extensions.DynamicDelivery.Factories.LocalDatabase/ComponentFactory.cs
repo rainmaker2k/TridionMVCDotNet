@@ -58,5 +58,14 @@ namespace Tridion.Extensions.DynamicDelivery.Factories.LocalDatabase
         }
 
         #endregion
-    }
+
+		#region IComponentFactory Members
+
+
+		public IList<string> FindComponents(ExtendedQueryParameters queryParameters) {
+			throw new NotImplementedException();
+		}
+
+		#endregion
+	}
 }

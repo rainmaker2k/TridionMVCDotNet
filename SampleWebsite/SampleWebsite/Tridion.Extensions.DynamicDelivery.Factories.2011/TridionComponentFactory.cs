@@ -17,7 +17,7 @@ using Tridion.Extensions.DynamicDelivery.ContentModel.Exceptions;
 namespace Tridion.Extensions.DynamicDelivery.Factories
 {
     [Export(typeof(IComponentFactory))]
-    class TridionComponentFactory : TridionFactoryBase
+	class TridionComponentFactory : TridionComponentFactoryBase
     {
         #region IMetaQueryFactory Members
         public IList<string> FindComponents(ExtendedQueryParameters queryParameters)

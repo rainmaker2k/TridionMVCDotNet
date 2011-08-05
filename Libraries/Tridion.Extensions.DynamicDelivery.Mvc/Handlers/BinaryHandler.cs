@@ -9,7 +9,8 @@
     using System.Web.Caching;
     using Tridion.Extensions.DynamicDelivery.ContentModel;
     using Tridion.Extensions.DynamicDelivery.ContentModel.Factories;
-    using Tridion.Extensions.DynamicDelivery.Mvc.Database;
+	using Tridion.Extensions.DynamicDelivery.Mvc.Database;
+    //using Tridion.Extensions.DynamicDelivery.Mvc.Database;
 
     public class BinaryHandler : IHttpHandler
     {

@@ -6,6 +6,8 @@ using Tridion.Extensions.DynamicDelivery.ContentModel.Factories;
 using Tridion.Extensions.DynamicDelivery.ContentModel;
 using System.Web;
 using Tridion.Extensions.DynamicDelivery.ContentModel.Exceptions;
+using Tridion.ContentDelivery.DynamicContent.Query;
+using Tridion.ContentDelivery.DynamicContent;
 
 namespace Tridion.Extensions.DynamicDelivery.Factories
 {
@@ -15,30 +17,46 @@ namespace Tridion.Extensions.DynamicDelivery.Factories
         {
             string encodedUrl = HttpUtility.UrlPathEncode(url);
             binary = null;
-            using (var sqlBinMetaHome = new Com.Tridion.Broker.Binaries.Meta.SQLBinaryMetaHome())
-            {
-                Com.Tridion.Meta.BinaryMeta binaryMeta = sqlBinMetaHome.FindByURL(PublicationId, encodedUrl); // "/Images/anubis_pecunia160_tcm70-520973.jpg"                            
-                if (binaryMeta != null)
-                {
-                    using (var sqlBinaryHome = new Com.Tridion.Broker.Binaries.SQLBinaryHome())
-                    {
-                        Com.Tridion.Data.BinaryData binData = sqlBinaryHome.FindByPrimaryKey(PublicationId, (int)binaryMeta.GetId());
-                        if (binData != null)
-                        {
-                            binary = new Binary(this)
-                            {
-                                Id = String.Format("tcm:{0}-{1}", binData.GetPublicationId(), binData.GetId()),
-                                Url = url,
-                                LastPublishedDate = DateTime.Now,
-                                Multimedia = null,
-                                VariantId = binData.GetVariantId()
-                            };
-                            return true;
-                        }
-                    }
-                }
-                return false;
-            }
+			//using (var sqlBinMetaHome = new Com.Tridion.Broker.Binaries.Meta.SQLBinaryMetaHome())
+			//{
+				
+			//    Com.Tridion.Meta.BinaryMeta binaryMeta = sqlBinMetaHome.FindByURL(PublicationId, encodedUrl); // "/Images/anubis_pecunia160_tcm70-520973.jpg"                            
+			//    if (binaryMeta != null)
+			//    {
+			//        using (var sqlBinaryHome = new Com.Tridion.Broker.Binaries.SQLBinaryHome())
+			//        {
+			//            Com.Tridion.Data.BinaryData binData = sqlBinaryHome.FindByPrimaryKey(PublicationId, (int)binaryMeta.GetId());
+			//            if (binData != null)
+			//            {
+			//                binary = new Binary(this)
+			//                {
+			//                    Id = String.Format("tcm:{0}-{1}", binData.GetPublicationId(), binData.GetId()),
+			//                    Url = url,
+			//                    LastPublishedDate = DateTime.Now,
+			//                    Multimedia = null,
+			//                    VariantId = binData.GetVariantId()
+			//                };
+			//                return true;
+			//            }
+			//        }
+			//    }
+			//    return false;
+			//}
+
+			Query binaryQuery = new Query();
+			ItemTypeCriteria isMultiMedia = new ItemTypeCriteria(32);
+			
+			PublicationCriteria inPub = new PublicationCriteria(PublicationId);
+			Criteria allCriteria = CriteriaFactory.And(isMultiMedia, inPub);
+
+			string[] results =  binaryQuery.ExecuteQuery();
+			binary = null;
+			return true;
+
+			foreach (var item in results) {
+				 				
+
+			}
 
 
         }
@@ -57,33 +75,33 @@ namespace Tridion.Extensions.DynamicDelivery.Factories
         public bool TryGetBinary(string tcmUri, out IBinary binary)
         {
             binary = null;
-            using (var uri = new Com.Tridion.Util.TCMURI(tcmUri))
-            {
-                using (var sqlBinHome = new Com.Tridion.Broker.Binaries.SQLBinaryHome())
-                {
-                    var binData = sqlBinHome.FindByPrimaryKey(uri.GetPublicationId(), uri.GetItemId());
-                    using (var sqlBinMetaHome = new Com.Tridion.Broker.Binaries.Meta.SQLBinaryMetaHome())
-                    {
-                        using (Com.Tridion.Util.TCDURI tcdUri = new Com.Tridion.Util.TCDURI(uri))
-                        {
-                            Com.Tridion.Meta.BinaryMeta binaryMeta = sqlBinMetaHome.FindByPrimaryKey(tcdUri);
+			//using (var uri = new Com.Tridion.Util.TCMURI(tcmUri))
+			//{
+			//    using (var sqlBinHome = new Com.Tridion.Broker.Binaries.SQLBinaryHome())
+			//    {
+			//        var binData = sqlBinHome.FindByPrimaryKey(uri.GetPublicationId(), uri.GetItemId());
+			//        using (var sqlBinMetaHome = new Com.Tridion.Broker.Binaries.Meta.SQLBinaryMetaHome())
+			//        {
+			//            using (Com.Tridion.Util.TCDURI tcdUri = new Com.Tridion.Util.TCDURI(uri))
+			//            {
+			//                Com.Tridion.Meta.BinaryMeta binaryMeta = sqlBinMetaHome.FindByPrimaryKey(tcdUri);
 
-                            if (binData != null)
-                            {
-                                binary = new Binary(this)
-                                {
-                                    Url = binaryMeta.GetURLPath(),
-                                    LastPublishedDate = DateTime.Now,
-                                    Multimedia = null,
-                                    VariantId = binData.GetVariantId()
-                                };
+			//                if (binData != null)
+			//                {
+			//                    binary = new Binary(this)
+			//                    {
+			//                        Url = binaryMeta.GetURLPath(),
+			//                        LastPublishedDate = DateTime.Now,
+			//                        Multimedia = null,
+			//                        VariantId = binData.GetVariantId()
+			//                    };
 
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }
+			//                    return true;
+			//                }
+			//            }
+			//        }
+			//    }
+			//}
             return false;
         }
 
@@ -101,24 +119,24 @@ namespace Tridion.Extensions.DynamicDelivery.Factories
         {
             string encodedUrl = HttpUtility.UrlPathEncode(url);
             bytes = null;
-            using (var sqlBinMetaHome = new Com.Tridion.Broker.Binaries.Meta.SQLBinaryMetaHome())
-            {
-                var coll = sqlBinMetaHome.FindByURL(encodedUrl);
-                using (var d = new Com.Tridion.Broker.Binaries.SQLBinaryHome())
-                {
-                    foreach (Com.Tridion.Meta.BinaryMeta item in coll)
-                    {
-                        if (!item.GetPublicationId().Equals(PublicationId)) continue;
+			//using (var sqlBinMetaHome = new Com.Tridion.Broker.Binaries.Meta.SQLBinaryMetaHome())
+			//{
+			//    var coll = sqlBinMetaHome.FindByURL(encodedUrl);
+			//    using (var d = new Com.Tridion.Broker.Binaries.SQLBinaryHome())
+			//    {
+			//        foreach (Com.Tridion.Meta.BinaryMeta item in coll)
+			//        {
+			//            if (!item.GetPublicationId().Equals(PublicationId)) continue;
 
-                        Com.Tridion.Data.BinaryData binData = d.FindByPrimaryKey(PublicationId, (int)item.GetId());
-                        if (binData != null)
-                        {
-                            bytes = binData.GetBytes();
-                            return true;
-                        }
-                    }
-                }
-            }
+			//            Com.Tridion.Data.BinaryData binData = d.FindByPrimaryKey(PublicationId, (int)item.GetId());
+			//            if (binData != null)
+			//            {
+			//                bytes = binData.GetBytes();
+			//                return true;
+			//            }
+			//        }
+			//    }
+			//}
 
             return false;
         }
@@ -137,19 +155,19 @@ namespace Tridion.Extensions.DynamicDelivery.Factories
         public bool TryGetBinaryContent(string tcmUri, out byte[] bytes)
         {
             bytes = null;
-            using (var uri = new Com.Tridion.Util.TCMURI(tcmUri))
-            {
-                using (var sqlBinHome = new Com.Tridion.Broker.Binaries.SQLBinaryHome())
-                {
-                    var binData = sqlBinHome.FindByPrimaryKey(uri.GetPublicationId(), uri.GetItemId());
-                    if (binData != null)
-                    {
-                        bytes = binData.GetBytes();
-                        return true;
-                    }
-                }
+			//using (var uri = new Com.Tridion.Util.TCMURI(tcmUri))
+			//{
+			//    using (var sqlBinHome = new Com.Tridion.Broker.Binaries.SQLBinaryHome())
+			//    {
+			//        var binData = sqlBinHome.FindByPrimaryKey(uri.GetPublicationId(), uri.GetItemId());
+			//        if (binData != null)
+			//        {
+			//            bytes = binData.GetBytes();
+			//            return true;
+			//        }
+			//    }
                 return false;
-            }
+			//}
 
         }
 

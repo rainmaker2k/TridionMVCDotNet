@@ -249,5 +249,14 @@ namespace Tridion.Extensions.DynamicDelivery.Factories
                 return String.IsNullOrEmpty(maxComponents) ? 200 : Convert.ToInt32(maxComponents);
             }
         }
-    }
+
+		#region IComponentFactory Members
+
+
+		public IList<string> FindComponents(ExtendedQueryParameters queryParameters) {
+			throw new NotImplementedException();
+		}
+
+		#endregion
+	}
 }

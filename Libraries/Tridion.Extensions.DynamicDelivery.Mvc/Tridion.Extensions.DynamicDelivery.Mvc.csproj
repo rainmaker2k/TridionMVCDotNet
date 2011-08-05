@@ -58,11 +58,15 @@
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
@@ -75,6 +79,27 @@
     <Compile Include="Caching\SchemaComponentsCacheDependency.cs" />
     <Compile Include="Caching\SitemapCacheDependency.cs" />
     <Compile Include="Controllers\TridionControllerBase.cs" />
+    <Compile Include="Database\Binaries.Context1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Binaries.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Binaries.cs">
+      <DependentUpon>Binaries.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Binaries.Designer.cs">
+      <DependentUpon>Binaries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Binaries1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Binaries.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Binaries2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Binaries.tt</DependentUpon>
+    </Compile>
     <Compile Include="FactoryService.cs" />
     <Compile Include="Handlers\BinaryHandler.cs" />
     <Compile Include="Html\DefaultComponentPresentationRenderer.cs" />
@@ -94,6 +119,23 @@
   <ItemGroup>
     <Folder Include="Modules\" />
     <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Database\Binaries.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Binaries.Context1.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="Database\Binaries.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Binaries1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Database\Binaries.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Binaries2.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -58,7 +58,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="netrtsn">
-      <HintPath>..\Tridion Dependencies\netrtsn.dll</HintPath>
+      <HintPath>..\..\..\Tridion Install Files\Content Delivery\dotNet\x86\netrtsn.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -70,10 +70,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Tridion.ContentDelivery">
-      <HintPath>..\Tridion Dependencies\Tridion.ContentDelivery.dll</HintPath>
+      <HintPath>..\..\..\Tridion Install Files\Content Delivery\dotNet\x86\Tridion.ContentDelivery.dll</HintPath>
     </Reference>
     <Reference Include="Tridion.ContentDelivery.Configuration">
-      <HintPath>..\Tridion Dependencies\Tridion.ContentDelivery.Configuration.dll</HintPath>
+      <HintPath>..\..\..\Tridion Install Files\Content Delivery\dotNet\x86\Tridion.ContentDelivery.Configuration.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +96,14 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
