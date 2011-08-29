@@ -20,8 +20,9 @@ namespace SampleWebsite
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-            routes.MapRoute(
+			routes.IgnoreRoute("{resource}.ico/{*pathInfo}");
+            
+			routes.MapRoute(
                 "TridionPage",
                 "{*PageId}",
                 new { controller = "Manage", action = "Page" }, // Parameter defaults

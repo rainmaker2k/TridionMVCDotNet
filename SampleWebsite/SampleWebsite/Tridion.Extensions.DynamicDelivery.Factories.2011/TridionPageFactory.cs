@@ -17,6 +17,9 @@ using Tridion.Extensions.DynamicDelivery.ContentModel.Factories;
 //using Tridion.Extensions.DynamicDelivery.Utils;
 using System.Collections.Generic;
 
+using System.Web.Caching;
+using System.Web;
+
 namespace Tridion.Extensions.DynamicDelivery.Factories
 {
     [Export(typeof(IPageFactory))]
@@ -25,18 +28,35 @@ namespace Tridion.Extensions.DynamicDelivery.Factories
     /// </summary>
     public class TridionPageFactory : TridionFactoryBase, IPageFactory
     {
-              
+
+		private static IDictionary<string, DateTime> lastPublishedDates = new Dictionary<string, DateTime>();
+
         #region IPageFactory Members
         public bool TryFindPage(string url, out IPage page)
         {
-            page = null;
-            string pageContentFromBroker = GetStringContentFromBrokerByUrl(url);
+			page = null;
+			
+			string cacheKey = String.Format("Page_{0}", url);
+			Cache cache = HttpContext.Current.Cache;
+			DateTime lastPublishedDate = DateTime.MinValue;
+			if (lastPublishedDates.ContainsKey(url))
+				lastPublishedDate = lastPublishedDates[url];
 
-            if (!pageContentFromBroker.Equals(String.Empty))
-            {
-                page = GetIPageObject(pageContentFromBroker);
-                return true;
-            }
+			var dbLastPublishedDate = GetLastPublishedDateByUrl(url);
+
+			if (cache[cacheKey] != null && lastPublishedDate != DateTime.MinValue && lastPublishedDate.Subtract(dbLastPublishedDate).TotalSeconds >= 0) {
+				page = (IPage)cache[cacheKey];
+				return true;
+			} else {
+				string pageContentFromBroker = GetStringContentFromBrokerByUrl(url);
+
+				if (!pageContentFromBroker.Equals(String.Empty)) {
+					page = GetIPageObject(pageContentFromBroker);
+					cache.Insert(cacheKey, page);
+					lastPublishedDates[url] = dbLastPublishedDate;
+					return true;
+				}
+			}
 
             return false;
         }
@@ -53,12 +73,32 @@ namespace Tridion.Extensions.DynamicDelivery.Factories
         public bool TryFindPageContent(string url, out string pageContent)
         {
             pageContent = string.Empty;
-            string tempPageContent = GetStringContentFromBrokerByUrl(url);
-            if (tempPageContent != string.Empty)
-            {
-                pageContent = tempPageContent;
-                return true;
-            }
+
+			string cacheKey = String.Format("PageContent_{0}", url);
+			Cache cache = HttpContext.Current.Cache;
+			DateTime lastPublishedDate = DateTime.MinValue;
+			if (lastPublishedDates.ContainsKey(url))
+				lastPublishedDate = lastPublishedDates[url];
+
+			var dbLastPublishedDate = GetLastPublishedDateByUrl(url);
+
+			if (cache[cacheKey] != null && lastPublishedDate != DateTime.MinValue && lastPublishedDate.Subtract(dbLastPublishedDate).TotalSeconds >= 0) 
+			{
+				pageContent = (string)cache[cacheKey];
+				return true;
+			} 
+			else 
+			{
+				string tempPageContent = GetStringContentFromBrokerByUrl(url);
+				if (tempPageContent != string.Empty) {
+					pageContent = tempPageContent;
+					cache.Insert(cacheKey, pageContent);
+					lastPublishedDates[url] = dbLastPublishedDate;
+					return true;
+				}
+			}
+
+            
 
             return false;
         }
@@ -76,12 +116,32 @@ namespace Tridion.Extensions.DynamicDelivery.Factories
         public bool TryGetPage(string tcmUri, out IPage page)
         {
             page = null;
-            string tempPageContent = GetStringContentFromBrokerByUri(tcmUri);
-            if (tempPageContent != string.Empty)
-            {
-                page = GetIPageObject(tempPageContent);
-                return true;
-            }
+
+			string cacheKey = String.Format("PageByUri_{0}", tcmUri);
+			Cache cache = HttpContext.Current.Cache;
+			DateTime lastPublishedDate = DateTime.MinValue;
+			if (lastPublishedDates.ContainsKey(tcmUri))
+				lastPublishedDate = lastPublishedDates[tcmUri];
+
+			var dbLastPublishedDate = GetLastPublishedDateByUri(tcmUri);
+
+			if (cache[cacheKey] != null && lastPublishedDate != DateTime.MinValue && lastPublishedDate.Subtract(dbLastPublishedDate).TotalSeconds >= 0) 
+			{
+				page = (IPage)cache[cacheKey];
+				return true;
+			}
+			else
+			{
+				string tempPageContent = GetStringContentFromBrokerByUri(tcmUri);
+				if (tempPageContent != string.Empty) {
+					page = GetIPageObject(tempPageContent);
+					cache.Insert(cacheKey, page);
+					lastPublishedDates[tcmUri] = dbLastPublishedDate;
+
+					return true;
+				}
+			}
+            
 
             return false;
             
@@ -100,12 +160,30 @@ namespace Tridion.Extensions.DynamicDelivery.Factories
         public bool TryGetPageContent(string tcmUri, out string pageContent)
         {
             pageContent = string.Empty;
-            string tempPageContent = GetStringContentFromBrokerByUri(tcmUri);
-            if (tempPageContent != string.Empty)
-            {
-                pageContent = tempPageContent;
-                return true;
-            }
+
+			string cacheKey = String.Format("PageContentByUri_{0}", tcmUri);
+			Cache cache = HttpContext.Current.Cache;
+			DateTime lastPublishedDate = DateTime.MinValue;
+			if (lastPublishedDates.ContainsKey(tcmUri))
+				lastPublishedDate = lastPublishedDates[tcmUri];
+
+			var dbLastPublishedDate = GetLastPublishedDateByUri(tcmUri);
+			if (cache[cacheKey] != null && lastPublishedDate != DateTime.MinValue && lastPublishedDate.Subtract(dbLastPublishedDate).TotalSeconds >= 0)
+			{
+				pageContent = (string)cache[cacheKey];
+				return true;
+			} 
+			else 
+			{
+				string tempPageContent = GetStringContentFromBrokerByUri(tcmUri);
+				if (tempPageContent != string.Empty) {
+					pageContent = tempPageContent;
+					cache.Insert(cacheKey, pageContent);
+					lastPublishedDates[tcmUri] = dbLastPublishedDate;
+					return true;
+				}
+			}
+            
 
             return false;
         }
@@ -121,7 +199,6 @@ namespace Tridion.Extensions.DynamicDelivery.Factories
             return pageContent;
         }
 
-        //TODO: Implement
         public bool HasPageChanged(string url)
         {
             return true;
@@ -322,19 +399,31 @@ namespace Tridion.Extensions.DynamicDelivery.Factories
         #endregion
 
 
-        public DateTime GetLastPublishedDate(string url)
+        public DateTime GetLastPublishedDateByUrl(string url)
         {
-            DynamicMetaRetriever getPageInfo = new DynamicMetaRetriever();
-            IPageMeta pageInfo = getPageInfo.GetPageMetaByUrl(url);
-
-            if (pageInfo == null)
+			PageMetaFactory pMetaFactory = new PageMetaFactory(PublicationId);
+			var pageInfo = pMetaFactory.GetMetaByUrl(url);
+		    
+            if (pageInfo == null || pageInfo.Count <=0)
             {
                 return DateTime.Now;
             }
             else
-            {
-                return pageInfo.LastPublicationDate;
+            {				
+					IPageMeta pInfo = pageInfo[0] as IPageMeta;
+					return pInfo.LastPublicationDate;
             }
         }
+
+		public DateTime GetLastPublishedDateByUri(string uri) {
+			PageMetaFactory pMetaFactory = new PageMetaFactory(PublicationId);
+			var pageInfo = pMetaFactory.GetMeta(uri);
+
+			if (pageInfo == null) {
+				return DateTime.Now;
+			} else {
+				return pageInfo.LastPublicationDate;
+			}
+		}
     }
 }

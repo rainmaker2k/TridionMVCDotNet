@@ -76,10 +76,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>del /Q /F $(SolutionDir)\SampleWebsite\bin\mef\*.Factories.*</PreBuildEvent>
+    <PreBuildEvent>del /Q /F $(SolutionDir)\SampleWebsite\bin\*.Factories.*</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>Copy /Y $(TargetDir)*.dll $(SolutionDir)SampleWebsite\bin\mef\</PostBuildEvent>
+    <PostBuildEvent>Copy /Y $(TargetDir)*.dll $(SolutionDir)SampleWebsite\bin\</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

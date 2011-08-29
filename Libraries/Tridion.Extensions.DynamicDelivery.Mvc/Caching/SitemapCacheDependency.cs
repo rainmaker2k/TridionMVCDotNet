@@ -23,13 +23,13 @@ namespace Tridion.Extensions.DynamicDelivery.Mvc.Caching
                 this, 0, pollTime);
             SitemapUrlPath = sitemapUrlPath;
             IPageFactory pageFactory = FactoryService.PageFactory;
-            LastPublishDate = pageFactory.GetLastPublishedDate(SitemapUrlPath);
+            LastPublishDate = pageFactory.GetLastPublishedDateByUrl(SitemapUrlPath);
         }
 
         private void CheckDependencyCallback(object sender)
         {
             IPageFactory pageFactory = FactoryService.PageFactory;
-            DateTime lastPublishedDate = pageFactory.GetLastPublishedDate(SitemapUrlPath);
+            DateTime lastPublishedDate = pageFactory.GetLastPublishedDateByUrl(SitemapUrlPath);
             if (lastPublishedDate > LastPublishDate)
             {
                 base.NotifyDependencyChanged(this, EventArgs.Empty);

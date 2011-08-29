@@ -12,7 +12,8 @@ namespace Tridion.Extensions.DynamicDelivery.ContentModel.Factories
         bool TryGetPageContent(string tcmUri, out string pageContent);
         string GetPageContent(string tcmUri);
         bool HasPageChanged(string url);
-        DateTime GetLastPublishedDate(string url);
+        DateTime GetLastPublishedDateByUrl(string url);
+		DateTime GetLastPublishedDateByUri(string url);
         string[] GetAllPublishedPageUrls(string[] includeExtensions, string[] pathStarts);
     }
 }
