@@ -233,5 +233,11 @@ namespace Tridion.Extensions.DynamicDelivery.Factories.WebService
                 .Select(component => (IComponent)serializer.Deserialize(new StringReader(component)))
                 .ToList();
         }
+
+
+        public IList<string> FindComponents(ExtendedQueryParameters queryParameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

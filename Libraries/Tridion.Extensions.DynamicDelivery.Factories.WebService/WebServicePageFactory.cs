@@ -139,5 +139,16 @@ namespace Tridion.Extensions.DynamicDelivery.Factories.WebService
                 return client.GetAllPublishedPageUrls(includeExtensions, pathStarts, PublicationId);
             }
         }
+
+
+        public DateTime GetLastPublishedDateByUrl(string url)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DateTime GetLastPublishedDateByUri(string url)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
